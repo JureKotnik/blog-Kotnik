@@ -13,7 +13,7 @@ module PostsHelper
                 concat link_to 'Izbriši', post, method: :delete, data: { confirm: 'Are you sure?' }
                 concat ' | '
         end
-        concat link_to 'Back', posts_path
+        concat link_to 'Nazaj', posts_path
       end
     end
   end

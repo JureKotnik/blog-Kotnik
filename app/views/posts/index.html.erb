@@ -7,10 +7,10 @@
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
+          <strong class="d-inline-block mb-2"><%= post.user.email %></strong>
           <h3 class="mb-0"><%= post.title %></h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto"><%= post.body %></p>
+          <div class="mb-1 text-muted"><%= post.created_at.strftime('%d.%m.%Y') %></div>
+          <p class="card-text mb-auto"><%= post.body.truncate(50, seperator: /\s/) %></p>
           <%= display_index_post_links(post)%>
         </div>
       </div>
@@ -21,10 +21,9 @@
         <tr>
           <td></td>
           <td></td>
-          <td><%= post.user.email %></td>
-          <td><%= link_to 'Show', post %></td>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td></td>
+ 
+          
         </tr>
     <% end %>
     </div>
